@@ -11,7 +11,7 @@ const gaeguFont = Gaegu({
 });
 
 export const metadata: Metadata = {
-  title: "avah's photography",
+  title: "avah's photography 📸",
   description: "avah's 2025 photography portfolio",
 };
 

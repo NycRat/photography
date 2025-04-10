@@ -9,6 +9,8 @@ export default function Home() {
         <div className="space-x-2">
           <Tag name="steveston" />
           <Tag name="richmond.nature.park" />
+          <Tag name="centro" />
+          <Tag name="richmond.centre" />
           <Tag name="vertical" />
           <Tag name="horizontal" />
         </div>
