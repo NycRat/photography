@@ -1,7 +1,29 @@
 [
-  { "name": "nature", "images": [{}, {}, {}, {}, {}, {}, {}] },
-  { "name": "steveston", "images": [{}, {}, {}, {}, {}, {}, {}, {}, {}] },
-  { "name": "centro", "images": [{}, {}, {}, {}, {}, {}, {}, {}, {}] },
-  { "name": "lansdowne", "images": [{}, {}, {}, {}, {}, {}, {}, {}] },
-  { "name": "seagull", "images": [{}, {}, {}, {}, {}, {}] }
+  {
+    "name": "nature",
+    "images": [{}, {}, {}, {}, { "vertical": true }, {}, {}]
+  },
+  {
+    "name": "steveston",
+    "images": [{ "vertical": true }, {}, {}, {}, {}, {}, {}, {}, {}]
+  },
+  {
+    "name": "centro",
+    "images": [
+      {},
+      {},
+      {},
+      {},
+      { "vertical": true },
+      { "vertical": true },
+      {},
+      {},
+      { "vertical": true }
+    ]
+  },
+  {
+    "name": "lansdowne",
+    "images": [{}, {}, {}, {}, {}, {}, { "vertical": true }, {}]
+  },
+  { "name": "seagull", "images": [{}, {}, {}, { "vertical": true }, {}, {}] }
 ]
