@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
-import { Gaegu } from "next/font/google";
+import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 // TODO choose different sans font
 
-const gaeguFont = Gaegu({
+const playfairFont = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],
-  weight: "700",
+  weight: "600",
+});
+
+const interFont = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -22,7 +27,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${gaeguFont.variable} antialiased`}>{children}</body>
+      <body
+        className={`${playfairFont.variable} ${interFont.variable} antialiased`}
+      >
+        {children}
+      </body>
     </html>
   );
 }

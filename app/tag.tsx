@@ -1,3 +1,9 @@
+import { Button } from "@/components/ui/button";
+
 export default function Tag({ name }: { name: string }) {
-  return <span className="bg-secondary p-1 rounded-sm">{name}</span>;
+  return (
+    <Button variant={"outline"}>
+      <span className="">{name}</span>
+    </Button>
+  );
 }
