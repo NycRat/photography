@@ -26,8 +26,8 @@ export default function FullImageTrigger({
           blurDataURL={`/photography/${collection}/${index}_preview.webp`}
           alt="photo"
           className="w-full aspect-[3/2] object-cover rounded"
-          width={1}
-          height={1}
+          width={5616}
+          height={3744}
         />
       </DialogContent>
     </Dialog>

@@ -19,14 +19,14 @@ export default function Grid() {
               >
                 <div className="relative">
                   <Image
-                    src={`/photography/${collectionData.name}/${j}_preview.webp`}
+                    src={`/photography/${collectionData.name}/${j}_preview${isVertical ? "_v" : ""}.webp`}
                     alt="photo"
                     className="w-full aspect-[3/2] object-cover"
                     placeholder="blur"
-                    blurDataURL={`/photography/${collectionData.name}/${j}_placeholder.webp`}
+                    blurDataURL={`/photography/${collectionData.name}/${j}_placeholder${isVertical ? "_v" : ""}.webp`}
                     width={5616 * 0.25} // actual resolution * 0.25 cause preview
                     height={3744 * 0.25}
-                    // priority={n < 16}
+                    priority={n < 16} // priority for first few photos
                   />
                   <div className="absolute top-0 bottom-0 left-0 right-0 hover:bg-[#0003] transition-colors ease-in-out"></div>
                   {/* {isVertical && ( */}
