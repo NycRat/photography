@@ -1,9 +1,23 @@
-import { Button } from "@/components/ui/button";
+import { Toggle } from "@/components/ui/toggle";
 
-export default function Tag({ name }: { name: string }) {
+export default function Tag({
+  name,
+  onClick,
+  defaultOn,
+  disabled,
+}: {
+  name: string;
+  onClick: (pressed: boolean) => void;
+  defaultOn?: boolean;
+  disabled?: boolean;
+}) {
   return (
-    <Button variant={"outline"}>
-      <span className="">{name}</span>
-    </Button>
+    <Toggle
+      onPressedChange={onClick}
+      defaultPressed={defaultOn}
+      disabled={disabled}
+    >
+      {name}
+    </Toggle>
   );
 }

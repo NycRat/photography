@@ -23,7 +23,6 @@ export default function FullImageTrigger({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      {/* <DialogContent className="max-w-[1600px] w-[calc(100%-20px)] max-h-[1000] h-[calc(100%-20px)] bg-transparent"> */}
       <DialogContent className={fitDivClass}>
         <DialogTitle></DialogTitle>
         <Image
