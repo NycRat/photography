@@ -11,3 +11,5 @@
 - zoom
 - tag system
 ```
+
+FIX: cropped photos dont process properly

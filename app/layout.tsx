@@ -2,8 +2,6 @@ import type { Metadata } from "next";
 import { Playfair_Display, Inter } from "next/font/google";
 import "./globals.css";
 
-// TODO choose different sans font
-
 const playfairFont = Playfair_Display({
   variable: "--font-display",
   subsets: ["latin"],

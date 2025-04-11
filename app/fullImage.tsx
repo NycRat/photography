@@ -10,24 +10,31 @@ export default function FullImageTrigger({
   children,
   collection,
   index,
+  isVertical,
 }: {
   children: React.ReactNode;
   collection: string;
   index: number;
+  isVertical: boolean;
 }) {
+  const fitDivClass = isVertical
+    ? "h-[min(100vh-40px,calc(100vw*3/2-40px))] w-[min(100vw-40px,calc(100vh*2/3-40px))]"
+    : "h-[min(100vh-40px,calc(100vw*2/3-40px))] w-[min(100vw-40px,calc(100vh*3/2-40px))]";
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className="max-w-4/5 bg-transparent">
+      {/* <DialogContent className="max-w-[1600px] w-[calc(100%-20px)] max-h-[1000] h-[calc(100%-20px)] bg-transparent"> */}
+      <DialogContent className={fitDivClass}>
         <DialogTitle></DialogTitle>
         <Image
           src={`/photography/${collection}/${index}_full.webp`}
           placeholder="blur"
           blurDataURL={`/photography/${collection}/${index}_preview.webp`}
           alt="photo"
-          className="w-full aspect-[3/2] object-cover rounded"
-          width={5616}
-          height={3744}
+          className=""
+          width={isVertical ? 3744 : 5616}
+          height={isVertical ? 5616 : 3744}
+          priority
         />
       </DialogContent>
     </Dialog>

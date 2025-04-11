@@ -16,6 +16,7 @@ export default function Grid() {
                 key={i + " " + j}
                 collection={collectionData.name}
                 index={j}
+                isVertical={isVertical}
               >
                 <div className="relative">
                   <Image
@@ -26,7 +27,7 @@ export default function Grid() {
                     blurDataURL={`/photography/${collectionData.name}/${j}_placeholder${isVertical ? "_v" : ""}.webp`}
                     width={5616 * 0.25} // actual resolution * 0.25 cause preview
                     height={3744 * 0.25}
-                    priority={n < 16} // priority for first few photos
+                    priority={n < 16}
                   />
                   <div className="absolute top-0 bottom-0 left-0 right-0 hover:bg-[#0003] transition-colors ease-in-out"></div>
                   {/* {isVertical && ( */}
