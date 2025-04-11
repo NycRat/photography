@@ -21,7 +21,9 @@ export default function FullImageTrigger({
       <DialogContent className="max-w-4/5 bg-transparent">
         <DialogTitle></DialogTitle>
         <Image
-          src={`/photography/${collection}/${index}.jpeg`}
+          src={`/photography/${collection}/${index}_full.webp`}
+          placeholder="blur"
+          blurDataURL={`/photography/${collection}/${index}_preview.webp`}
           alt="photo"
           className="w-full aspect-[3/2] object-cover rounded"
           width={1}

@@ -1,4 +1,3 @@
-import FullImage from "./fullImage";
 import Grid from "./grid";
 import Tag from "./tag";
 
