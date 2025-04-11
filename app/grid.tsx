@@ -1,5 +1,6 @@
 import Image from "next/image";
 import metadata from "@/public/metadata.json";
+import FullImageTrigger from "./fullImage";
 
 export default function Grid() {
   return (
@@ -9,20 +10,27 @@ export default function Grid() {
           (j) => {
             const isVertical = collectionData.images[j]["vertical"] || false;
             return (
-              <div className="relative" key={i + " " + j}>
-                <Image
-                  src={`/photography/${collectionData.name}/${j}.jpeg`}
-                  alt="photo"
-                  className="w-full aspect-[3/2] object-cover"
-                  width={1}
-                  height={1}
-                />
-                {/* {isVertical && ( */}
-                {/*   <span className="absolute z-10 top-0 mix-blend-difference text-white"> */}
-                {/*     vertical */}
-                {/*   </span> */}
-                {/* )} */}
-              </div>
+              <FullImageTrigger
+                key={i + " " + j}
+                collection={collectionData.name}
+                index={j}
+              >
+                <div className="relative">
+                  <Image
+                    src={`/photography/${collectionData.name}/${j}.jpeg`}
+                    alt="photo"
+                    className="w-full aspect-[3/2] object-cover"
+                    width={1}
+                    height={1}
+                  />
+                  <div className="absolute top-0 bottom-0 left-0 right-0 hover:bg-[#0003] transition-colors ease-in-out"></div>
+                  {/* {isVertical && ( */}
+                  {/*   <span className="absolute z-10 top-0 mix-blend-difference text-white"> */}
+                  {/*     vertical */}
+                  {/*   </span> */}
+                  {/* )} */}
+                </div>
+              </FullImageTrigger>
             );
           },
         );
