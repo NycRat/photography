@@ -5,6 +5,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import Image from "next/image";
+import placeholders from "@/app/placeholders.json";
 
 export default function FullImageTrigger({
   children,
@@ -13,7 +14,8 @@ export default function FullImageTrigger({
   isVertical,
 }: {
   children: React.ReactNode;
-  collection: string;
+  // find better way to set collection type
+  collection: "steveston" | "nature" | "centro" | "seagull" | "lansdowne";
   index: number;
   isVertical: boolean;
 }) {
@@ -23,12 +25,13 @@ export default function FullImageTrigger({
   return (
     <Dialog>
       <DialogTrigger>{children}</DialogTrigger>
-      <DialogContent className={fitDivClass}>
+      <DialogContent className={fitDivClass} aria-describedby={undefined}>
         <DialogTitle></DialogTitle>
         <Image
           src={`/photography/${collection}/${index}_full.webp`}
           placeholder="blur"
-          blurDataURL={`/photography/${collection}/${index}_preview.webp`}
+          // blurDataURL={`/photography/${collection}/${index}_preview.webp`}
+          blurDataURL={placeholders[collection][index]}
           alt="photo"
           className=""
           width={isVertical ? 3744 : 5616}
