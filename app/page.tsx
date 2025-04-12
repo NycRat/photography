@@ -1,12 +1,21 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Grid from "./grid";
 import Tag from "./tag";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
   const [activeOrientations, setActiveOrientation] = useState([false, false]);
+  const [secretInput, setSecretInput] = useState<number[]>([]);
+  const router = useRouter();
+
+  useEffect(() => {
+    if (secretInput.toString() === [0, 0, 1, 3, 2, -1, -3, 4].toString()) {
+      router.push("/secret");
+    }
+  }, [secretInput]);
 
   return (
     <>
@@ -15,10 +24,14 @@ export default function Home() {
         {/* FIX mobile view, tags too wide */}
         <div className="space-x-2 flex justify-center">
           {["nature", "steveston", "centro", "seagull", "lansdowne"].map(
-            (name) => (
+            (name, i) => (
               <Tag
                 key={name}
                 onClick={(on) => {
+                  const newInput = [...secretInput];
+                  newInput.push((on ? 1 : -1) * i);
+                  setSecretInput(newInput);
+
                   const newTags = new Set(activeTags);
                   if (on) {
                     newTags.add(name);
