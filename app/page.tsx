@@ -35,16 +35,22 @@ export default function Home() {
             onClick={(on) => {
               const newOrientations = [...activeOrientations];
               newOrientations[0] = on;
+              newOrientations[1] = false;
               setActiveOrientation(newOrientations);
             }}
+            // disabled={activeOrientations[1]}
+            pressed={activeOrientations[0]}
             name={"horizontal"}
           />
           <Tag
             onClick={(on) => {
               const newOrientations = [...activeOrientations];
               newOrientations[1] = on;
+              newOrientations[0] = false;
               setActiveOrientation(newOrientations);
             }}
+            pressed={activeOrientations[1]}
+            // disabled={activeOrientations[0]}
             name={"vertical"}
           />
         </div>
