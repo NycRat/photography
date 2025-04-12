@@ -33,7 +33,6 @@ export default function FullImageTrigger({
           className=""
           width={isVertical ? 3744 : 5616}
           height={isVertical ? 5616 : 3744}
-          priority
         />
       </DialogContent>
     </Dialog>

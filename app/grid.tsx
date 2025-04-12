@@ -49,7 +49,6 @@ export default function Grid({
                   }/${j}_placeholder${isVertical ? "_v" : ""}.webp`}
                   width={5616 * 0.25} // actual resolution * 0.25 cause preview
                   height={3744 * 0.25}
-                  priority={n < 16}
                 />
               </div>
             );
