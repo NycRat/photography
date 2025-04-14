@@ -24,7 +24,7 @@ export default function Home() {
         <h1 className="font-display text-5xl">photography</h1>
         {/* FIX mobile view, tags too wide */}
         <div className="space-x-2 flex justify-center">
-          <div className="hidden lg:block">
+          <div className="hidden lg:block space-x-2">
             {metadata
               .map((data) => data.name)
               .map((name, i) => (
