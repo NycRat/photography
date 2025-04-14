@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Grid from "./grid";
 import Tag from "./tag";
 import { useRouter } from "next/navigation";
+import metadata from "./metadata.json";
 
 export default function Home() {
   const [activeTags, setActiveTags] = useState<Set<string>>(new Set());
@@ -23,8 +24,9 @@ export default function Home() {
         <h1 className="font-display text-5xl">photography</h1>
         {/* FIX mobile view, tags too wide */}
         <div className="space-x-2 flex justify-center">
-          {["nature", "steveston", "centro", "seagull", "lansdowne"].map(
-            (name, i) => (
+          {metadata
+            .map((data) => data.name)
+            .map((name, i) => (
               <Tag
                 key={name}
                 onClick={(on) => {
@@ -42,8 +44,7 @@ export default function Home() {
                 }}
                 name={name}
               />
-            ),
-          )}
+            ))}
           <Tag
             onClick={(on) => {
               const newOrientations = [...activeOrientations];

@@ -4,6 +4,7 @@ import Image from "next/image";
 import metadata from "@/app/metadata.json";
 import placeholders from "@/app/placeholders.json";
 import FullImageTrigger from "./fullImage";
+import { Collection } from "./types";
 
 export default function Grid({
   tags,
@@ -25,12 +26,7 @@ export default function Grid({
               (orientations[isVertical ? 1 : 0] ||
                 (!orientations[0] && !orientations[1]));
 
-            const collection = collectionData.name as
-              | "steveston"
-              | "nature"
-              | "centro"
-              | "seagull"
-              | "lansdowne";
+            const collection = collectionData.name as Collection;
 
             return (
               <div
@@ -47,7 +43,7 @@ export default function Grid({
                   </FullImageTrigger>
                 </div>
                 <Image
-                  src={`/photography/${collection}/${j}_preview${
+                  src={`/photography/${String(collection)}/${j}_preview${
                     isVertical ? "_v" : ""
                   }.webp`}
                   alt="photo"

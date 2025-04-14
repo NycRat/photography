@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/dialog";
 import Image from "next/image";
 import placeholders from "@/app/placeholders.json";
+import { Collection } from "./types";
 
 export default function FullImageTrigger({
   children,
@@ -15,7 +16,7 @@ export default function FullImageTrigger({
 }: {
   children: React.ReactNode;
   // find better way to set collection type
-  collection: "steveston" | "nature" | "centro" | "seagull" | "lansdowne";
+  collection: Collection;
   index: number;
   isVertical: boolean;
 }) {

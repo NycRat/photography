@@ -25,5 +25,52 @@
     "name": "lansdowne",
     "images": [{}, {}, {}, {}, {}, {}, { "vertical": true }, {}]
   },
-  { "name": "seagull", "images": [{}, {}, {}, { "vertical": true }, {}, {}] }
+  { "name": "seagull", "images": [{}, {}, {}, { "vertical": true }, {}, {}] },
+  {
+    "name": "dealership",
+    "images": [
+      {},
+      {},
+      { "vertical": true },
+      { "vertical": true },
+      {},
+      {},
+      {},
+      {},
+      {}
+    ]
+  },
+  {
+    "name": "langara",
+    "images": [
+      {},
+      {},
+      {},
+      {},
+      { "vertical": true },
+      { "vertical": true },
+      {},
+      {},
+      {},
+      { "vertical": true },
+      {},
+      {},
+      { "vertical": true },
+      {}
+    ]
+  },
+  {
+    "name": "garden",
+    "images": [
+      {},
+      {},
+      { "vertical": true },
+      { "vertical": true },
+      {},
+      {},
+      { "vertical": true },
+      {},
+      {}
+    ]
+  }
 ]
