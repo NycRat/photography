@@ -24,27 +24,29 @@ export default function Home() {
         <h1 className="font-display text-5xl">photography</h1>
         {/* FIX mobile view, tags too wide */}
         <div className="space-x-2 flex justify-center">
-          {metadata
-            .map((data) => data.name)
-            .map((name, i) => (
-              <Tag
-                key={name}
-                onClick={(on) => {
-                  const newInput = [...secretInput];
-                  newInput.push((on ? 1 : -1) * i);
-                  setSecretInput(newInput);
+          <div className="hidden lg:block">
+            {metadata
+              .map((data) => data.name)
+              .map((name, i) => (
+                <Tag
+                  key={name}
+                  onClick={(on) => {
+                    const newInput = [...secretInput];
+                    newInput.push((on ? 1 : -1) * i);
+                    setSecretInput(newInput);
 
-                  const newTags = new Set(activeTags);
-                  if (on) {
-                    newTags.add(name);
-                  } else {
-                    newTags.delete(name);
-                  }
-                  setActiveTags(newTags);
-                }}
-                name={name}
-              />
-            ))}
+                    const newTags = new Set(activeTags);
+                    if (on) {
+                      newTags.add(name);
+                    } else {
+                      newTags.delete(name);
+                    }
+                    setActiveTags(newTags);
+                  }}
+                  name={name}
+                />
+              ))}
+          </div>
           <Tag
             onClick={(on) => {
               const newOrientations = [...activeOrientations];
