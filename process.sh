@@ -3,7 +3,7 @@
 rm placeholders.json
 echo { >> placeholders.json
 
-for d in ./raw_images/*/; do
+for d in ./raw_images/a/; do
   d=${d#./raw_images/}
   mkdir ./public/$d
   index=0
@@ -24,9 +24,9 @@ for d in ./raw_images/*/; do
       echo ""
     fi
 
-    # magick $f -resize 5x5% -quality 10 -blur 0x2 -define webp:method=6 ${output_path}_placeholder.webp
-    # magick $f -resize 15x15% -quality 60 -define webp:method=6 ${output_path}_preview.webp
-    # magick $f -quality 80 -define webp:method=6 ${output_path}_full.webp
+    magick $f -resize 5x5% -quality 10 -blur 0x2 -define webp:method=6 ${output_path}_placeholder.webp
+    magick $f -resize 15x15% -quality 60 -define webp:method=6 ${output_path}_preview.webp
+    magick $f -quality 80 -define webp:method=6 ${output_path}_full.webp
 
     base64_placeholder=$(base64 -i ${output_path}_placeholder.webp)
     base64_placeholder="data:image/webp;base64,"$base64_placeholder

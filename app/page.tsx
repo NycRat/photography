@@ -13,7 +13,10 @@ export default function Home() {
   const router = useRouter();
 
   useEffect(() => {
-    if (secretInput.toString() === [0, 0, 1, 3, 2, -1, -3, 4].toString()) {
+    if (
+      secretInput.toString() ===
+      [0, 0, 1, 3, 2, -1, -3, 4, 5, -4, -5, 0, -2, 0].toString()
+    ) {
       router.push("/secret");
     }
   }, [secretInput]);
@@ -27,25 +30,28 @@ export default function Home() {
           <div className="hidden lg:block space-x-2">
             {metadata
               .map((data) => data.name)
-              .map((name, i) => (
-                <Tag
-                  key={name}
-                  onClick={(on) => {
-                    const newInput = [...secretInput];
-                    newInput.push((on ? 1 : -1) * i);
-                    setSecretInput(newInput);
+              .map(
+                (name, i) =>
+                  name !== "a" && (
+                    <Tag
+                      key={name}
+                      onClick={(on) => {
+                        const newInput = [...secretInput];
+                        newInput.push((on ? 1 : -1) * i);
+                        setSecretInput(newInput);
 
-                    const newTags = new Set(activeTags);
-                    if (on) {
-                      newTags.add(name);
-                    } else {
-                      newTags.delete(name);
-                    }
-                    setActiveTags(newTags);
-                  }}
-                  name={name}
-                />
-              ))}
+                        const newTags = new Set(activeTags);
+                        if (on) {
+                          newTags.add(name);
+                        } else {
+                          newTags.delete(name);
+                        }
+                        setActiveTags(newTags);
+                      }}
+                      name={name}
+                    />
+                  ),
+              )}
           </div>
           <Tag
             onClick={(on) => {

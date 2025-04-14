@@ -6,4 +6,5 @@ export type Collection =
   | "lansdowne"
   | "dealership"
   | "langara"
-  | "garden";
+  | "garden"
+  | "a";
